@@ -93,4 +93,19 @@ cd med-predict
 ```bash
 python MedicalApp.py
 ```
+Или
+### Для Windows:
+1. Скачайте архив с GitHub
+2. Распакуйте в любую папку
+3. Запустите `run_windows.bat`
+4. Следуйте инструкциям на экране
+
+### Для Linux/Mac:
+```bash
+# Дайте права на выполнение
+chmod +x run_linux.sh
+
+# Запустите
+./run_linux.sh
+```
 <div align="center"> <sub>Создано с ❤️ для улучшения медицинской диагностики</sub> </div>
