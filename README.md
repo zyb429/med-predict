@@ -96,4 +96,4 @@ cd med-predict
 ```bash
 python MedicalApp.py
 ```
-<div align="center"> <sub>Создано с ❤️ для улучшения медицинской диагностики</sub> </div> ```
+<div align="center"> <sub>Создано с ❤️ для улучшения медицинской диагностики</sub> </div>
