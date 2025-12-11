@@ -20,5 +20,6 @@ PyInstaller.__main__.run([
     '--add-data=assets;assets',       # Добавляем папку с моделями
     '--add-data=models;models',       # Добавляем папку с моделями
     '--add-data=views;views',         # Добавляем папку с view
+    '--noconsole',  # Убираем консоль для чистого GUI
     '--clean'                 # Очистка перед сборкой
 ])
