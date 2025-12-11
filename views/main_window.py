@@ -162,7 +162,7 @@ class MainWindow(QMainWindow):
         scroll.setStyleSheet("QScrollArea { background: transparent; }")
 
         self.input_container = QWidget()
-        self.input_container.setStyleSheet("QWidget { background: white; }")
+        self.input_container.setStyleSheet("QWidget { background: #1e293b; }")
         self.input_layout = QVBoxLayout(self.input_container)
         self.input_layout.setSpacing(20)
         self.input_layout.setContentsMargins(5, 10, 5, 10)
