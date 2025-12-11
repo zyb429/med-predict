@@ -310,7 +310,7 @@ class ModelRepository:
         return {
             "endometriosis_diagnostics": ModelConfig(
                 name="Диагностика эндометриоза яичников",
-                description="Модель оценивает риск эндометриоза яичников на основе аминокислотного профиля и жалоб пациентки",
+                description="",
                 z_formula="Z = f(Тирозин, Аргинин, NO, жалобы)",
                 params=[
                     "Тирозин — концентрация тирозина в плазме крови (мкмоль/л)",

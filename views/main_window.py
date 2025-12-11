@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
         header.setFixedHeight(80)
         layout = QHBoxLayout(header)
         layout.setContentsMargins(30, 0, 30, 0)
-        title = QLabel("🏥 Аминокислотный предиктор перинатальных осложнений")
+        title = QLabel("🏥 Расчёт рисков развития эндометриоза яичников")
         title.setObjectName("headerTitle")
         layout.addWidget(title)
         parent_layout.addWidget(header)
@@ -244,7 +244,7 @@ class MainWindow(QMainWindow):
             self.model_combo.addItem(config.name, key)
 
     def set_model_description(self, text):
-        self.description_label.setText(f"📋 {text}")
+        self.description_label.setText(f" {text}")
 
     def create_input_fields(self, fields):
         self.clear_input_fields()

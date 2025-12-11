@@ -13,7 +13,9 @@ if os.path.exists('build'):
 # Параметры сборки
 PyInstaller.__main__.run([
     'MedicalApp.py',                # Главный файл приложения
-    '--onefile',              # Один исполняемый файл
+    #'--onefile',
+    # Один исполняемый файл
+    '--onedir',
     '--windowed',             # Для GUI приложений
     '--icon=assets/icons/app.ico',         # Иконка приложения
     '--name=MedPredict',      # Имя приложения
