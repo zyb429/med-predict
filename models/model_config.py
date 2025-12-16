@@ -309,7 +309,7 @@ class ModelRepository:
 
         return {
             "endometriosis_diagnostics": ModelConfig(
-                name="Диагностика эндометриоза яичников",
+                name="Диагностика рисков развития эндометриоза яичников",
                 description="",
                 z_formula="Z = f(Тирозин, Аргинин, NO, жалобы)",
                 params=[

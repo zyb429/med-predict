@@ -150,10 +150,6 @@ class PDFExporter:
             story.append(table)
             story.append(Spacer(1, 8 * mm))
 
-            story.append(Paragraph("Формула расчета:", heading_style))
-            story.append(Paragraph(formula, normal_style))
-            story.append(Spacer(1, 8 * mm))
-
             story.append(Paragraph("Результаты расчета:", heading_style))
             result_data = [
                 ["Показатель", "Значение"],

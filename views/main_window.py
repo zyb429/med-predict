@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
         header.setFixedHeight(80)
         layout = QHBoxLayout(header)
         layout.setContentsMargins(30, 0, 30, 0)
-        title = QLabel("🏥 Расчёт рисков развития эндометриоза яичников")
+        title = QLabel("🏥 Диагностика рисков развития эндометриоза яичников")
         title.setObjectName("headerTitle")
         layout.addWidget(title)
         parent_layout.addWidget(header)

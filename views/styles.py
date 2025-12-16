@@ -111,8 +111,9 @@ QWidget QDoubleSpinBox {
 /* ======================================================= */
 
 /* Выпадающие списки */
+/* Основной стиль ComboBox */
 QComboBox, #modelCombo {
-    background-color: #1e293b !important;
+    background-color: #28354a !important;
     color: #f8fafc !important;
     border: 2px solid #475569 !important;
     border-radius: 10px !important;
@@ -120,24 +121,130 @@ QComboBox, #modelCombo {
     min-height: 20px !important;
 }
 
-QComboBox::drop-down, #modelCombo::drop-down {
-    border: none !important;
-    width: 30px !important;
-    background: transparent !important;
+/* Ховер на весь ComboBox */
+QComboBox:hover, #modelCombo:hover {
+    border: 2px solid #7c3aed !important;
+    background-color: #28354a !important;
 }
 
+/* Фокус на ComboBox */
+QComboBox:focus, #modelCombo:focus {
+    border: 2px solid #3b82f6 !important;
+    background-color: #28354a !important;
+}
+
+/* Стрелка раскрытия */
 QComboBox::down-arrow, #modelCombo::down-arrow {
-    image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238b5cf6" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>') !important;
+    /* Qt автоматически использует системную стрелку Windows */
+    width: 16px;
+    height: 16px;
 }
 
+/* ======================================================= */
+/* ВЫПАДАЮЩИЙ СПИСОК И ЕГО ПУНКТЫ */
+/* ======================================================= */
+
+/* Контейнер выпадающего списка */
 QComboBox QAbstractItemView, #modelCombo QAbstractItemView {
-    background-color: #1e293b !important;
+    background-color: #28354a !important;
     border: 2px solid #8b5cf6 !important;
     border-radius: 8px !important;
     color: #f8fafc !important;
-    padding: 8px !important;
-    selection-background-color: #8b5cf6 !important;
-    selection-color: white !important;
+    padding: 6px !important;
+    selection-background-color: transparent !important; /* Убираем стандартный синий фон */
+    selection-color: transparent !important;
+    outline: none !important; /* Убираем пунктирную рамку при фокусе */
+}
+
+/* Базовый стиль для каждого пункта в списке */
+QComboBox QAbstractItemView::item, 
+#modelCombo QAbstractItemView::item {
+    background-color: transparent !important;
+    color: #cbd5e1 !important;
+    padding: 10px 16px !important;
+    margin: 2px 0 !important;
+    border-radius: 6px !important;
+    border: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    min-height: 20px !important;
+}
+
+/* ХОВЕР НА ПУНКТ В СПИСКЕ */
+QComboBox QAbstractItemView::item:hover, 
+#modelCombo QAbstractItemView::item:hover {
+    background-color: rgba(124, 58, 237, 0.25) !important; /* Полупрозрачный фиолетовый */
+    color: #ffffff !important;
+    border-left: 3px solid #8b5cf6 !important;
+    padding-left: 13px !important; /* Компенсируем отступ для границы */
+}
+
+/* ВЫБРАННЫЙ ПУНКТ (после клика) */
+QComboBox QAbstractItemView::item:selected, 
+#modelCombo QAbstractItemView::item:selected {
+    background-color: rgba(139, 92, 246, 0.4) !important; /* Более насыщенный фиолетовый */
+    color: white !important;
+    font-weight: 600 !important;
+    border-left: 3px solid #3b82f6 !important;
+    padding-left: 13px !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* АКТИВНЫЙ ПУНКТ (с фокусом клавиатуры) */
+QComboBox QAbstractItemView::item:focus, 
+#modelCombo QAbstractItemView::item:focus {
+    background-color: rgba(59, 130, 246, 0.3) !important; /* Полупрозрачный синий */
+    outline: 1px solid #3b82f6 !important;
+    outline-offset: -1px !important;
+}
+
+/* Первый и последний элементы - скругленные углы */
+QComboBox QAbstractItemView::item:first, 
+#modelCombo QAbstractItemView::item:first {
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+}
+
+QComboBox QAbstractItemView::item:last, 
+#modelCombo QAbstractItemView::item:last {
+    border-bottom-left-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
+}
+
+/* Разделители между пунктами */
+QComboBox QAbstractItemView::item:!last, 
+#modelCombo QAbstractItemView::item:!last {
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1) !important;
+}
+
+/* Полоса прокрутки внутри выпадающего списка */
+QComboBox QAbstractItemView QScrollBar:vertical, 
+#modelCombo QAbstractItemView QScrollBar:vertical {
+    background-color: #1a2332 !important;
+    width: 8px !important;
+    border-radius: 4px !important;
+    margin: 2px !important;
+}
+
+QComboBox QAbstractItemView QScrollBar::handle:vertical, 
+#modelCombo QAbstractItemView QScrollBar::handle:vertical {
+    background-color: #475569 !important;
+    border-radius: 4px !important;
+    min-height: 20px !important;
+}
+
+/* Ховер на полосе прокрутки */
+QComboBox QAbstractItemView QScrollBar::handle:vertical:hover, 
+#modelCombo QAbstractItemView QScrollBar::handle:vertical:hover {
+    background-color: #7c3aed !important;
+}
+
+/* Кнопки прокрутки (скрываем) */
+QComboBox QAbstractItemView QScrollBar::add-line:vertical,
+QComboBox QAbstractItemView QScrollBar::sub-line:vertical,
+#modelCombo QAbstractItemView QScrollBar::add-line:vertical,
+#modelCombo QAbstractItemView QScrollBar::sub-line:vertical {
+    height: 0px !important;
 }
 
 /* Числовые поля */
@@ -237,6 +344,11 @@ QRadioButton::indicator:checked {
     background-color: rgba(139, 92, 246, 0.1) !important;
     border: 2px solid #7c3aed !important;
     color: #7c3aed !important;
+}
+
+/* Кнопка экспорта */
+#exportButton:hover {
+    background-color: rgba(139, 92, 246, 0.1) !important;
 }
 
 /* Результаты */
